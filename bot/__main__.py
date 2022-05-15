@@ -19,7 +19,7 @@ from bot.plugins.new_join_fn import (
 
 from pyrogram import (
   Client, 
-  Filters, 
+  filters, 
   MessageHandler,
   CallbackQueryHandler
 )
@@ -63,21 +63,21 @@ if __name__ == "__main__" :
     # COMPRESS command
     incoming_compress_message_handler = MessageHandler(
         incoming_compress_message_f,
-        filters=Filters.command([Command.COMPRESS])
+        filters=filters.command([Command.COMPRESS])
     )
     app.add_handler(incoming_compress_message_handler)
     
     # CANCEL command
     incoming_cancel_message_handler = MessageHandler(
         incoming_cancel_message_f,
-        filters=Filters.command([Command.CANCEL])
+        filters=filters.command([Command.CANCEL])
     )
     app.add_handler(incoming_cancel_message_handler)
 
     # MEMEs COMMANDs
     exec_message_handler = MessageHandler(
         exec_message_f,
-        filters=Filters.command([Command.EXEC])
+        filters=filters.command([Command.EXEC])
     )
     app.add_handler(exec_message_handler)
     
@@ -85,7 +85,7 @@ if __name__ == "__main__" :
     # Telegram command to upload LOG files
     upload_log_f_handler = MessageHandler(
         upload_log_file,
-        filters=Filters.command([Command.UPLOAD_LOG_FILE]) & Filters.chat(chats=AUTH_USERS)       
+        filters=filters.command([Command.UPLOAD_LOG_FILE]) & filters.chat(chats=AUTH_USERS)       
     )
     app.add_handler(upload_log_f_handler)
     
