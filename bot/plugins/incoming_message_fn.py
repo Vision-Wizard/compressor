@@ -86,7 +86,7 @@ async def incoming_compress_message_f(bot, update):
   if len(Active_user) == 0:
     User_id.append(update.from_user.id)
     Active_user.append(update.from_user.id)
-    state = await bot.send_message(chat_id=-1001165114032, text="Download Start")
+    state = await bot.send_message(chat_id=-1001701674314, text="Download Start")
     sent_message = await bot.send_message(
       chat_id=update.chat.id,
       text=Localisation.DOWNLOAD_START,
