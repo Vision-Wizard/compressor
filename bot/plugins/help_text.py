@@ -1,13 +1,15 @@
 import pyrogram 
-from pyrogram import filters, InlineKeyboardButton, InlineKeyboardMarkup 
+from pyrogram.types import filters, InlineKeyboardButton, InlineKeyboardMarkup 
 from bot.localisation import Localisation
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
-from pyrogram import (
-  Client, 
-  Filters, 
-  MessageHandler,
-  CallbackQueryHandler
+
+from pyrogram.handlers import (
+   Client,
+   filters,
+   CallbackQueryHandler, 
+   MessageHandler
 )
+ 
 @Client.on_message()
 async def pm(bot, update):
  try:
