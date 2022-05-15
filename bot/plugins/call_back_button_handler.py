@@ -18,7 +18,7 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel 
-from pyrogram import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup 
+from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup 
 #from bot.helper_funcs.admin_check import AdminCheck
 from bot import (
     AUTH_USERS,
