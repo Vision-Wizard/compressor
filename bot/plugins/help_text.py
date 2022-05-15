@@ -1,5 +1,5 @@
 import pyrogram 
-from pyrogram import Filters, InlineKeyboardButton, InlineKeyboardMarkup 
+from pyrogram import filters, InlineKeyboardButton, InlineKeyboardMarkup 
 from bot.localisation import Localisation
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 from pyrogram import (
@@ -24,7 +24,7 @@ async def pm(bot, update):
 
 
 
-@Client.on_message(Filters.command(["start"]))
+@Client.on_message(filters.command(["start"]))
 async def start(bot, update):
       await update.reply_text(text=Localisation.START_TEXT.format(update.from_user.first_name),
                               parse_mode="markdown",
@@ -44,7 +44,7 @@ async def start(bot, update):
                             )
                           )
 
-@Client.on_message(Filters.command(["help"]))
+@Client.on_message(filters.command(["help"]))
 async def help(bot, update):
       await update.reply_text(text=Localisation.HELP_TEXT.format(update.from_user.first_name),
                               parse_mode="markdown",
@@ -60,7 +60,7 @@ async def help(bot, update):
                           )
 
 
-@Client.on_message(Filters.command(["about"]))
+@Client.on_message(filters.command(["about"]))
 async def about(bot, update):
       await update.reply_text(text=Localisation.ABOUT_TEXT.format(update.from_user.first_name),
                               parse_mode="markdown",
