@@ -17,13 +17,13 @@ from bot.plugins.new_join_fn import (
     help_message_f	
 )
 
-from pyrogram import (
-  Client, 
-  filters, 
-  MessageHandler,
-  CallbackQueryHandler
+from pyrogram.handlers import (
+   Client,
+   filters,
+   CallbackQueryHandler,
+   MessageHandler
 )
-
+ 
 from bot.plugins.incoming_message_fn import (
     incoming_compress_message_f,
     incoming_cancel_message_f
