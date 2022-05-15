@@ -17,12 +17,9 @@ from bot.plugins.new_join_fn import (
     help_message_f	
 )
 
-from pyrogram.handlers import (
-   client,
-   filters,
-   CallbackQueryHandler,
-   MessageHandler
-)
+from pyrogram import Client, filters
+from pyrogram.handlers import MessageHandler, CallbackQueryHandler
+ 
  
 from bot.plugins.incoming_message_fn import (
     incoming_compress_message_f,
